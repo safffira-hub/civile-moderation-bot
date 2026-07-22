@@ -14,7 +14,6 @@ from aiogram.client.default import DefaultBotProperties
 import os
 
 # ============ CONFIG ============
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "7783618044:AAENUiQ1vfmY442RzdvgM7QB71j1NQH4yYg")
 GROUP_ID = int(os.environ.get("GROUP_ID", "-1001787318055"))
 CHANNEL_ID = os.environ.get("CHANNEL_ID", "@societycivil")
 FLOODIKA_THREAD = int(os.environ.get("FLOODIKA_THREAD", "438392"))
