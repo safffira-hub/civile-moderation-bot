@@ -268,7 +268,13 @@ async def on_floodika_message(message: Message):
         # Forward to ССЫЛКИ topic
         try:
             # Copy the message to the links thread
-            await message.copy_to(GROUP_ID, message_thread_id=LINKS_THREAD)
+                        await bot.send_copy(
+                chat_id=GROUP_ID,
+                from_chat_id=message.chat.id,
+                message_id=message.message_id,
+                message_thread_id=LINKS_THREAD
+            )
+
             # Delete original from Флудилка
             await message.delete()
             logger.info(f"Moved message {message.message_id} to links thread")
