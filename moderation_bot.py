@@ -271,12 +271,6 @@ async def on_floodika_message(message: Message):
             await message.copy_to(GROUP_ID, message_thread_id=LINKS_THREAD)
             # Delete original from Флудилка
             await message.delete()
-            # Notify user
-            await bot.send_message(
-                GROUP_ID,
-                f"↗️ Ссылка/файл от <b>{message.from_user.first_name}</b> перемещён в <b>ССЫЛКИ</b>",
-                message_thread_id=FLOODIKA_THREAD
-            )
             logger.info(f"Moved message {message.message_id} to links thread")
         except Exception as e:
             logger.error(f"Failed to move message: {e}")
