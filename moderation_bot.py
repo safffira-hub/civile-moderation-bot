@@ -275,6 +275,16 @@ async def on_floodika_message(message: Message):
         except Exception as e:
             logger.error(f"Failed to move message: {e}")
 
+# ============ TASK 3: Delete system messages ============
+
+@router.message(F.chat.id == GROUP_ID, F.content_type == "new_chat_members")
+async def on_new_member_system(message: Message):
+    """Delete 'joined the group' system messages"""
+    try:
+        await message.delete()
+        logger.info(f"Deleted system join message")
+    except Exception as e:
+        logger.error(f"Failed to delete system message: {e}")
 
 # ============ TASK 4: Auto-correct keyboard layout ============
 
