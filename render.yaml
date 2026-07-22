@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: civile-moderation-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python moderation_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: GROUP_ID
+        value: "-1001787318055"
+      - key: CHANNEL_ID
+        value: "@societycivil"
+      - key: FLOODIKA_THREAD
+        value: "438392"
+      - key: LINKS_THREAD
+        value: "460367"
+      - key: WEBHOOK_MODE
+        value: "false"
+    plan: free
