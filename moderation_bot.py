@@ -318,7 +318,7 @@ async def on_text_message(message: Message):
 
 async def silence_watcher():
     """Periodically check if chat is silent and send a joke/news"""
-        global last_message_time
+    global last_message_time
     while True:
         await asyncio.sleep(60)  # Check every minute
         silence = (datetime.now() - last_message_time).total_seconds()
